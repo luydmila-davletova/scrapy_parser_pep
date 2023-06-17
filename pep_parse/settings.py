@@ -1,7 +1,9 @@
 from datetime import datetime
 
-ALLOWED_DOMAINS = 'peps.python.org'
-START_URLS = 'https://peps.python.org/'
+
+ALLOWED_DOMAINS = ['peps.python.org']
+START_URLS = [f'https://{domain}/' for domain in ALLOWED_DOMAINS]
+
 
 BOT_NAME = 'pep_parse'
 FILE_NAME = 'status_summary_'

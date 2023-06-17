@@ -10,6 +10,7 @@ from .settings import (
     FORMAT_FILE
 )
 
+
 BASE_DIR = Path(__file__).parent.parent
 
 
@@ -29,9 +30,9 @@ class PepParsePipeline:
     def close_spider(self, spider):
         RESULT_DIR = BASE_DIR / RESULT_NAME_FOLDER
         filename = FILE_NAME + NOW_TIME + FORMAT_FILE
-        with open(RESULT_DIR / filename, mode='w', encoding='utf-8') as f:
+        with open(RESULT_DIR / filename, mode='w', encoding='utf-8') as file:
             csv.writer(
-                f, dialect=csv.unix_dialect,
+                file, dialect=csv.unix_dialect,
                 quoting=csv.QUOTE_NONE
             ).writerows((
                 ('Status', 'Quantity'),
